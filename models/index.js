@@ -1,9 +1,8 @@
-
 const Sequelize  = require('sequelize');
-
 const sequelize = new Sequelize('ChemicalDB', 'root', 'Arjun@1999', {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    define: { "id": false, "freezeTableName": true, "createdAt": false, "updatedAt": false }
 });
 
 try {

@@ -1,0 +1,14 @@
+<div style="background-color: burlywood; width: fit-content ; margin-left: 600px; margin-top: 20px; padding: 20px;" >
+    <h1>Add new chemical</h1>
+    <form #newChemForm="ngForm" (ngSubmit)="addNewChemical(newChemForm.value) ">
+        <input ngModel type="text" name="name"  placeholder="Enter Name" style="margin-left: 75px;">
+        <br> <br>
+        <input ngModel type="text" name="description"  placeholder="Enter Description" style="margin-left: 75px;">
+        <br> <br>
+        <input ngModel type="url" name="url"  placeholder="Enter url" style="margin-left: 75px;">
+        <br> <br>
+        <input ngModel type="text" name="attribution"  placeholder="Enter Attribution" style="margin-left: 75px;">
+        <br> <br>
+        <button style="margin-left: 150px; padding: 10px; border-radius: 8px; background-color: aquamarine;">ADD</button>
+    </form>
+</div>

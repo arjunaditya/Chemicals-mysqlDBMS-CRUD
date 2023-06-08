@@ -1,7 +1,15 @@
-<ul *ngFor="let chemical of allChemicals">
-    <mat-card (click)="getFullChemicalInfo(chemical.id)">
-        <mat-card-content>{{chemical.name}}</mat-card-content>
-        <mat-card-content>{{chemical.url}}</mat-card-content>
+<div style="padding: 30px; background-color: burlywood;">
+    <ul *ngFor="let chemical of allChemicals | paginate: {
+    itemsPerPage:10, 
+    currentPage: page,
+    totalItems: totalLength
+}">
+    <mat-card (click)="getFullChemicalInfo(chemical.id)" style="width: 500px; padding: 20px; background-color:azure; border-radius: 25px; margin-left: 470px;">
+        <mat-card-header>
+            <mat-card-title>{{chemical.name}}</mat-card-title>
+            <img class="md-avatar" style="border-radius: 50%; border: 5px solid black;height:200px!important;width:200px!important;" src={{chemical.url}}>
+          </mat-card-header>
       </mat-card>
   </ul>
-  <router-outlet></router-outlet>
+  <pagination-controls (pageChange)="page=$event"></pagination-controls>
+</div>

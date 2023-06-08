@@ -8,20 +8,28 @@ import { FullChemicalInfoComponent } from './full-chemical-info/full-chemical-in
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from  'ngx-pagination'
+import {HttpClientModule} from '@angular/common/http'
+import {FormsModule} from '@angular/forms';
+import { AddNewChemicalComponent } from './add-new-chemical/add-new-chemical.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ChemicalCardsComponent,
-    FullChemicalInfoComponent
+    FullChemicalInfoComponent,
+    AddNewChemicalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

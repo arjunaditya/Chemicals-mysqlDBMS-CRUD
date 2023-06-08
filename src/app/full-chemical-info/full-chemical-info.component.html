@@ -1,1 +1,20 @@
-<p>full-chemical-info works!</p>
+<div style="background-color: burlywood; width: fit-content; margin-left: 400px;">
+    <br>
+    <br>
+
+    <img [src]=info.url alt="'photo'" [title]=info.name style="border-radius: 50%; border: 5px solid slateblue;height:300px!important;width:300px!important; margin-left: 250px;"> 
+        <h2 style="margin-left: 160px; background-color: gold; width: fit-content; padding: 10px; border-radius: 10px; ">
+            Name of the Compund: {{info.name}}</h2>
+        <button (click)="deleteChemical()" style="margin-left: 340px; padding: 10px; border-radius: 8px; background-color: aquamarine;">Delete Chemical</button>
+        <p>
+            Description: {{info.description}}
+        </p>
+        <button (click)="makeEditable()" style="margin-left: 350px; padding: 10px; border-radius: 8px; background-color: aquamarine;">Edit</button>
+    <form #chemForm="ngForm" (ngSubmit)="getFormData(chemForm.value) ">
+        <input [disabled]=isEditable ngModel type="text" name="name" style="margin-left: 300px;" placeholder="Enter name">
+        <br> <br>
+        <input [disabled]=isEditable ngModel type="text" name="description" style="margin-left: 300px;" placeholder="Enter description">
+        <br> <br>
+        <button  [disabled]=isEditable style="margin-left: 340px; padding: 10px; border-radius: 8px; background-color: aquamarine;">Update</button>
+    </form>
+</div>
