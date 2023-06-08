@@ -1,0 +1,7 @@
+<ul *ngFor="let chemical of allChemicals">
+    <mat-card (click)="getFullChemicalInfo(chemical.id)">
+        <mat-card-content>{{chemical.name}}</mat-card-content>
+        <mat-card-content>{{chemical.url}}</mat-card-content>
+      </mat-card>
+  </ul>
+  <router-outlet></router-outlet>
